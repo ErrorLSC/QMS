@@ -1,0 +1,65 @@
+ClassifierParams:
+  decay_factor: 0.9
+  winsor_upper: 0.95
+  new_item_weeks: 8
+
+  single_zero_ratio: 0.95
+  single_recent_demand: 0
+
+  intermittent_zero_ratio: 0.7
+
+  steady_cv_threshold: 1.0
+  steady_min_weeks_ratio: 0.25
+  steady_max_zero_ratio: 0.6
+
+  trend_slope_threshold: 0.3
+
+  seasonal_strength_ratio: 0.4
+  seasonal_strength_min: 0.5
+
+  burst_cv_threshold: 1.5
+  burst_zero_ratio_max: 0.3
+  burst_recent_max_multiplier: 3.0
+
+  inactive_zero_ratio: 0.8
+  dormant_zero_ratio: 0.95
+  inactive_recent_weeks_demand_threshold: 2
+  occasional_zero_ratio_threshold: 0.6
+
+  debug: false
+  default_service_level_if_replaced: 0.85
+  seasonal_decompose_period: 4
+  burst_tail_window: 4
+  burst_mean_window: 12
+  recent_weeks_window: 12
+
+ForecastParams:
+  decay_factor: 0.9
+  winsor_upper: 0.95
+  forecast_horizon_weeks: 12
+
+  steady_n_samples: 1000
+  steady_quantile: 0.6
+
+  seasonal_baseline_window_weeks: 12
+  seasonal_fill_profile_default: 1.0
+  seasonal_debug: false
+
+  intermittent_alpha: 0.1
+
+SafetyStockParams:
+  decay_factor: 0.9
+  winsor_upper: 0.95
+  intermittent_alpha: 0.1
+
+  service_level:
+    max_leadtime: 360
+    min_servicelevel: 0.85
+    max_servicelevel: 0.95
+
+MRPParams:
+  use_moq: true
+  min_moq: 1
+  round_up_to_wlots: false
+  use_wlot: false
+  include_zero_qty: false

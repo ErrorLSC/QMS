@@ -1,0 +1,5 @@
+mrp:
+  classify: qms_core.pipelines.forecast.demand.demand_classification_job.DemandClassificationJob
+  forecast: qms_core.pipelines.forecast.demand.demand_forecast_job.ForecastGenerationJob
+  safetystock: qms_core.pipelines.forecast.safetystock.safety_stock_job.SafetyStockGenerationJob
+  mrp: qms_core.pipelines.forecast.MRP.MRP_job.MRPJob

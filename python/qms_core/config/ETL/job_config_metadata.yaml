@@ -1,0 +1,73 @@
+ILM:
+  init_args: ["config", "dsn", "extract_params", "load_params"]
+  extract_params:
+    warehouse_list: "__WAREHOUSE_LIST__"
+  load_params:
+    use_smart_writer: True
+    skip_if_unchanged: True
+    only_update_delta: True
+    monitor_fields: ["Warehouse","WLOC","WDESC","WLTYP","WZONE","VOLCAP","WEIGHTCAP"]
+    write_params:
+      upsert: true
+
+IWI:
+  init_args: ["config", "dsn", "extract_params", "load_params"]
+  extract_params:
+    warehouse_list: "__WAREHOUSE_LIST__"
+    location_exclude_rules:
+      warehouse: "5"
+      location: "BARAKI"
+  load_params:
+    use_smart_writer: true
+    monitor_fields: ["WLEAD"]
+    skip_if_unchanged: true
+    only_update_delta: true
+    log_table_model: qms_core.infrastructure.db.models.IWI_ChangeLog
+    change_reason: "ERP Sync"
+    write_params:
+      upsert: true
+
+IIM:
+  init_args: ["config", "dsn", "extract_params", "load_params"]
+  extract_params: {}
+  load_params:
+    use_smart_writer: true
+    monitor_fields: ["IVEND"]
+    skip_if_unchanged: true
+    only_update_delta: true
+    log_table_model: qms_core.infrastructure.db.models.IIM_ChangeLog
+    change_reason: "ERP Sync"
+    write_params:
+      upsert: true
+
+DPS:
+  init_args: ["config", "dsn", "extract_params", "load_params"]
+  extract_params: {}
+  load_params:
+    use_smart_writer: true
+    skip_if_unchanged: true
+    only_update_delta: true
+    write_params:
+      upsert: true
+
+AVM:
+  init_args: ["config", "dsn", "extract_params", "load_params"]
+  extract_params:
+    order_type_filter: "UR"
+  load_params:
+    use_smart_writer: true
+    skip_if_unchanged: true
+    only_update_delta: true
+    write_params:
+      upsert: true
+
+GCC:
+  init_args: ["config", "dsn","date_columns", "extract_params", "load_params"]
+  date_columns: ["CCNVDT"]
+  extract_params: {}
+  load_params:
+    use_smart_writer: true
+    skip_if_unchanged: true
+    only_update_delta: true
+    write_params:
+      upsert: true

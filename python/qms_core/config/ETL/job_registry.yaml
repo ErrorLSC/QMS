@@ -1,0 +1,25 @@
+inventory:
+  ILI: qms_core.pipelines.ETL.BPCS.inventory.inventory_job.ILIJob
+  IWIAvail: qms_core.pipelines.ETL.BPCS.inventory.inventory_job.IWIAvailJob
+
+demand:
+  DemandHistory: qms_core.pipelines.ETL.BPCS.demand_history.demand_history_job.DemandHistoryJob
+  DemandHistoryRaw: qms_core.pipelines.ETL.BPCS.demand_history.demand_history_job.DemandHistoryRawJob
+
+metadata:
+  ILM: qms_core.pipelines.ETL.BPCS.metadata.metadata_job.ILMJob
+  IWI: qms_core.pipelines.ETL.BPCS.metadata.metadata_job.IWIJob
+  IIM: qms_core.pipelines.ETL.BPCS.metadata.metadata_job.IIMJob
+  DPS: qms_core.pipelines.ETL.BPCS.metadata.metadata_job.DPSJob
+  AVM: qms_core.pipelines.ETL.BPCS.metadata.metadata_job.AVMJob
+  GCC: qms_core.pipelines.ETL.BPCS.metadata.metadata_job.GCCJob
+
+po_change_log:
+  po_change_log: qms_core.pipelines.ETL.po_change_log.po_change_log_job.POChangeLogJob
+
+po_leadtime:
+  Domestic: qms_core.pipelines.ETL.BPCS.po_leadtime.po_leadtime_job.DomesticPOLeadtimeJob
+  Oversea: qms_core.pipelines.ETL.BPCS.po_leadtime.po_leadtime_job.OverseaPOLeadtimeJob
+  Intransit: qms_core.pipelines.ETL.BPCS.po_leadtime.po_leadtime_job.POIntransitJob
+  FreightCharge: qms_core.pipelines.ETL.BPCS.po_leadtime.po_leadtime_job.FreightChargeJob
+

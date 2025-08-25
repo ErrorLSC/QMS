@@ -1,0 +1,21 @@
+ILI:
+  init_args: ["config", "dsn", "extract_params", "load_params"]
+  load_params:
+    use_smart_writer: true
+    only_update_delta: false
+    write_params:
+      delete_before_insert: true
+      upsert: false
+  extract_params:
+    warehouse_list: "__WAREHOUSE_LIST__"
+
+IWIAvail:
+  init_args: ["config", "dsn", "extract_params", "load_params"]
+  load_params:
+    use_smart_writer: true
+    only_update_delta: false
+    write_params:
+      delete_before_insert: true
+      upsert: false
+  extract_params:
+    warehouse_list: "__WAREHOUSE_LIST__"

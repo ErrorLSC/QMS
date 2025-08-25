@@ -1,0 +1,36 @@
+DemandHistory:
+  init_args: ["config", "dsn", "date_columns", "extract_params", "load_params"]
+  date_columns: ["LODTE", "LRDTE", "LSDTE"]
+  extract_params:
+    min_order_entry_date: 20240101
+    only_recent_orders: true
+    exclude_deleted_orders: true
+    exclude_redistribution_orders: true
+    exclude_internal_orders: false
+    allowed_item_types: ["S", "E", "K", "A"]
+    allowed_work_types: ["ASX", "ASY", "GW ", "KIT", "REP", "SPW"]
+    warehouses: "__WAREHOUSE_LIST__"
+  load_params:
+    write_params:
+      delete_before_insert: false
+      upsert: true
+      hot_zone_delete: true
+      hot_zone_days: 180
+      hot_zone_column: "LODTE"
+
+DemandHistoryRaw:
+  init_args: ["config", "dsn", "date_columns", "extract_params", "load_params"]
+  date_columns: ["LODTE", "LRDTE", "LSDTE"]
+  extract_params:
+    min_order_entry_date: 20240101
+    only_recent_orders: true
+    exclude_deleted_orders: false
+    exclude_redistribution_orders: true
+    exclude_internal_orders: false
+    allowed_item_types: ["S", "E", "K", "A"]
+    allowed_work_types: ["ASX", "ASY", "GW ", "KIT", "REP", "SPW"]
+    warehouses: "__WAREHOUSE_LIST__"
+  load_params:
+    write_params:
+      delete_before_insert: false
+      upsert: true
