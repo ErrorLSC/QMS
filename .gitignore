@@ -70,7 +70,7 @@ coverage.xml
 .DS_Store
 Thumbs.db
 
-python/Scripts
-python/etc
-python/include
-python/share
+python/Scripts/
+python/etc/
+python/include/
+python/share/
