@@ -34,5 +34,5 @@ if __name__ == "__main__":
     # print(df_result)
     # df_result.to_excel("virtual_transaction.xlsx",index=False)
     config = MRPConfig()
-    df = execute_job(config=config,dry_run=False)
+    df = execute_job(config=config,dry_run=True)
     # print(df)

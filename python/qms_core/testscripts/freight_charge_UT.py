@@ -8,5 +8,5 @@ def test_run(config:MRPConfig,dry_run=True):
 
 if __name__ == "__main__":
     config = MRPConfig()
-    result = test_run(config=config,dry_run=False)
+    result = test_run(config=config,dry_run=True)
     print(result)

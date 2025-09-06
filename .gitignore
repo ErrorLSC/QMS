@@ -29,6 +29,7 @@ var/
 env/
 venv/
 ENV/
+QMSenv/
 env.bak/
 venv.bak/
 
